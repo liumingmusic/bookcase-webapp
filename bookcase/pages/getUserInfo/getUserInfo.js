@@ -13,7 +13,9 @@ Page({
   },
 
   onLoad() {
-
+    wx.setNavigationBarTitle({
+      title: "授权登录"
+    });
   },
 
   /**

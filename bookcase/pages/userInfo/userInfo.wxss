@@ -1,1 +1,40 @@
-/* todo/pages/userInfo/userInfo.wxss */
+.user-icon {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+
+.userinfo {
+  height: 300rpx;
+  width: 100%;
+  background: #00b4ff;
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 300ms ease;
+  margin-bottom: 30rpx;
+}
+
+.userinfo-avatar {
+  width: 130rpx;
+  height: 130rpx;
+  margin: 40rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+}
+
+.userinfo-text {
+  color: #fff;
+}
+
+.version-text {
+  display: block;
+  font-size: 30rpx;
+  color: #ccc;
+  text-align: center;
+  width: 100vw;
+  margin-top: 50rpx;
+}

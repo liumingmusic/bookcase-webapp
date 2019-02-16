@@ -1,2 +1,31 @@
-<!--todo/pages/userInfo/userInfo.wxml-->
-<text>todo/pages/userInfo/userInfo.wxml</text>
+<view class="section">
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <image 
+      class="user-icon userinfo-avatar" 
+      src="{{avatarUrl}}">
+    </image>
+    <text class="userinfo-text">{{userName}}</text>
+  </view>
+  <van-cell-group>
+    <van-cell
+      title="图书统计"
+      is-link
+      url="../index/index"
+      link-type="switchTab"
+    />
+    <van-cell
+      title="我要反馈"
+      is-link
+      url="../index/index"
+      link-type="switchTab"
+    />
+    <van-cell
+      title="作者介绍"
+      is-link
+      url="../index/index"
+      link-type="switchTab"
+    />
+  </van-cell-group>
+  <text class="version-text">v1.0.0</text>
+</view>
