@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/scanCode/scanCode",
+    "pages/userInfo/userInfo",
+    "pages/getUserInfo/getUserInfo"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "私人书柜",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "图书",
+        "iconPath": "images/book.png",
+        "selectedIconPath": "images/select_book.png"
+      },
+      {
+        "pagePath": "pages/scanCode/scanCode",
+        "text": "扫码",
+        "iconPath": "images/scanCode.png",
+        "selectedIconPath": "images/select_scanCode.png"
+      },
+      {
+        "pagePath": "pages/userInfo/userInfo",
+        "text": "个人",
+        "iconPath": "images/self.png",
+        "selectedIconPath": "images/select_self.png"
+      }
+    ]
+  }
+}

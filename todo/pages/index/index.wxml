@@ -1,0 +1,26 @@
+<view class="card-list" wx:for="{{bookList}}" wx:key="{{item._id}}">
+  <van-card
+    price="市场价: {{item.price}}"
+    desc="{{item.author[0]}}"
+    title="{{item.title}}"
+    thumb="{{item.image}}"
+    centered="true"
+    >
+    <view slot="tags">
+      <van-tag 
+        wx:for="{{item.tags}}" 
+        wx:for-index="idx" 
+        wx:for-item="tag" 
+        type="success" 
+        wx:if="{{idx <= 1}}"
+        wx:key="{{item._id}}"
+        >
+        {{tag.name}}
+      </van-tag>
+    </view>
+    <view slot="footer">
+      <van-button size="mini" type="danger">删除</van-button>
+      <van-button size="mini" type="primary">查看</van-button>
+    </view>
+  </van-card>
+</view>

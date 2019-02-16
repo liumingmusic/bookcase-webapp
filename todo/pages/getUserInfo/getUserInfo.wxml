@@ -1,0 +1,13 @@
+<van-notify id="custom-selector" />
+<view class="section">
+  <image
+    style="width: 200rpx; height: 200rpx; border-radius: 50%"
+    src="{{avatarUrl}}"
+  ></image>
+  <button 
+    open-type="getUserInfo" 
+    bindgetuserinfo="onGetUserInfo"
+    class="userinfo-avatar"
+  >授权登录</button>
+  <text>授权登录才能进行愉快的玩耍</text>
+</view>

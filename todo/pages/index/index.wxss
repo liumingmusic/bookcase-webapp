@@ -1,0 +1,15 @@
+.card-list {
+  padding: 10rpx;
+}
+
+van-tag {
+  margin-right: 5rpx;
+}
+
+van-button {
+  margin-right: 10rpx;
+}
+
+.van-card__header image.van-card__img {
+  height: 120%;
+}

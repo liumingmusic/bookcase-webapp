@@ -1,0 +1,18 @@
+.section {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+image {
+  margin-bottom: 20rpx;
+}
+
+text {
+  font-size: 30rpx;
+  color: #ccc;
+  margin-top: 20rpx;
+}
