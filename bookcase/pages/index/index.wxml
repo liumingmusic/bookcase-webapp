@@ -1,3 +1,4 @@
+<van-dialog id="van-dialog" />
 <view class="card-list" wx:for="{{bookList}}" wx:key="{{item._id}}">
   <van-card
     price="市场价: {{item.price}}"
@@ -19,8 +20,20 @@
       </van-tag>
     </view>
     <view slot="footer">
-      <van-button size="mini" type="danger">删除</van-button>
-      <van-button size="mini" type="primary">查看</van-button>
+      <van-button 
+        size="mini" 
+        type="danger" 
+        data-bookid="{{item._id}}" 
+        bind:click="removeById">
+        删除
+      </van-button>
+      <van-button 
+        size="mini" 
+        type="primary" 
+        data-bookitem="{{item}}"
+        bind:click="findById">
+        查看
+      </van-button>
     </view>
   </van-card>
 </view>

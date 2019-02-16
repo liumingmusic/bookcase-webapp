@@ -2,6 +2,7 @@
   "usingComponents": {
     "van-button": "../../vant/button/index",
     "van-card": "../../vant/card/index",
-    "van-tag": "../../vant/tag/index"
+    "van-tag": "../../vant/tag/index",
+    "van-dialog": "../../vant/dialog/index"
   }
 }
