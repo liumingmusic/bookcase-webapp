@@ -102,6 +102,9 @@ Page({
    * 图书列表
    */
   getBookList: function() {
+    wx.showLoading({
+      title: '加载中',
+    });
     let _that = this;
     const db = wx.cloud.database();
     //get book info list
@@ -112,6 +115,7 @@ Page({
         _that.setData({
           bookList: res.data
         });
+        wx.hideLoading();
       }
     });
   },

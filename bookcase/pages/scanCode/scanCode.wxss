@@ -1,1 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
 
+.item {
+  margin-bottom: 30rpx;
+}

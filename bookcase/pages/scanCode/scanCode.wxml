@@ -1,5 +1,10 @@
-<van-row gutter="20">
-  <van-col span="8" offset="8">
-    <van-button type="primary" bind:click="scanCode">扫码加书</van-button>
-  </van-col>
-</van-row>
+<view class="container">
+  <!-- 二维码扫码 -->
+  <view class="item">
+    <van-row gutter="20">
+      <van-col span="8" offset="8">
+        <van-button type="primary" bind:click="scanCode">扫码加书</van-button>
+      </van-col>
+    </van-row>
+  </view>
+</view>

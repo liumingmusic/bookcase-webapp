@@ -1,4 +1,5 @@
-// todo/pages/scanCode/scanCode.js
+
+
 Page({
 
   /**
@@ -67,52 +68,64 @@ Page({
   },
 
   /************自定义事件**************/
+
+  /**
+   * 扫码
+   */
   scanCode: function(event) {
+    let _that = this;
     // 只允许从相机扫码
     wx.scanCode({
-      onlyFromCamera: true,
+      onlyFromCamera: false,
       scanType: ["barCode"],
       success(res) {
-        wx.showLoading({
-          title: '数据读取中',
-          mask: true
-        });
-        // 调用云函数
-        wx.cloud.callFunction({
-          name: 'bookInfo',
-          data: {
-            isbn: res.result
-          },
-          success: res => {
-            var bookInfo = JSON.parse(res.result);
-            // 添加到数据库中
-            const db = wx.cloud.database();
-            // 添加创建时间
-            bookInfo.createTime = db.serverDate()
-            //添加记录
-            db.collection('todo_collection').add({
-              data: bookInfo,
-              success(res) {
-                wx.hideLoading();
-                wx.showToast({
-                  title: "书籍添加成功",
-                  icon: 'success',
-                  duration: 2000
-                });
-              },
-              fail: err => {
-                console.log(err);
-              }
-            })
+        _that.getBookInfo(res);
+      },
+      fail: function(err) {
+        console.log(err);
+      }
+    });
+  },
+
+  /**
+   * 获取图书信息
+   */
+  getBookInfo: function(res) {
+    wx.showLoading({
+      title: '数据读取中',
+      mask: true
+    });
+    // 调用云函数
+    wx.cloud.callFunction({
+      name: 'bookInfo',
+      data: {
+        isbn: res.result
+      },
+      success: res => {
+        var bookInfo = JSON.parse(res.result);
+        // 添加到数据库中
+        const db = wx.cloud.database();
+        // 添加创建时间
+        bookInfo.createTime = db.serverDate()
+        //添加记录
+        db.collection('todo_collection').add({
+          data: bookInfo,
+          success(res) {
+            wx.hideLoading();
+            wx.showToast({
+              title: "书籍添加成功",
+              icon: 'success',
+              duration: 2000
+            });
           },
           fail: err => {
             console.log(err);
           }
         })
       },
-      fail: function(err) {
+      fail: err => {
         console.log(err);
       }
-    })
+    });
   }
 })
